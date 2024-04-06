@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="NavigBar">
+        <section>
+          <img class="imgLogo" src="./img/Group 4.png" alt="" srcset="" />
+
+          <div class="dropdown">
+            <button class="dropbtn">Інтерактив</button>
+            <div class="dropdown-content">
+              <a href="#">Числовий</a>
+              <a href="#">Ігровий</a>
+              <a href="#">Ознайомчий</a>
+            </div>
+          </div>
+
+          <div class="dropdown2">
+            <button class="dropbtn2">Наша команда</button>
+            <div class="dropdown-content dropdown-content2">
+              <a href="#">Числовий</a>
+              <a href="#">Ігровий</a>
+              <a href="#">Ознайомчий</a>
+            </div>
+          </div>
+
+          <div class="dropdown3">
+            <button class="dropbtn3">Контакти</button>
+            <div class="dropdown-content dropdown-content3">
+              <a href="#">Числовий</a>
+              <a href="#">Ігровий</a>
+              <a href="#">Ознайомчий</a>
+            </div>
+          </div>
+        </section>
+        <!-- 
+    <button id="theme-toggle">Змінити тему</button> -->
+        <section>
+          <h3 class="hedinguser">
+            Вітаємо, <span id="userNameHeader"></span>
+          </h3>
+
+          <button class="buttonclick" id="openModalBtn">Login</button>
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>
+                Привіт!<br />Ви потрапили на сайт інтерактивних ігор та
+                завдань.<br />Надіємось, що вам сподобається i ви отримаєте
+                позитивні емоції!<br />Бажаємо Вам гарно провести час!
+              </p>
+              <input
+                type="text"
+                id="userNameInput"
+                placeholder="Введіть ваше ім'я"
+              />
+              <button id="submitName">Підтвердити</button>
+            </div>
+          </div>
+
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Дякуємо за підписку!</p>
+            </div>
+          </div>
+        </section>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h1 class="heding1-main">Популярні інетрактивні ігри</h1>
+        <div class="black-line"></div>
+      </section>
+
+      <!-- калькулятор-->
+
+      <!-- <section>
+        <div>
+          <h2>калькулятор</h2>
+     <form class="form1">
+          <input name="inp11" class="inp1" type="text">
+          <button name="plus" class="button1">+</button>
+          <button name="Minus" class="button2">-</button>
+          <button name="Mno" class="butoon3">*</button>
+          <button name="dil" class="button4">/</button> 
+          <input name="inp22" class="inp2" type="text">
+      <button name="dor" class="butonn4" type ="submit">=</button>
+        <input name="result" class="inp3" type="text">
+
+     </form>
+        </div>
+      </section> -->
+
+<section>
+      <div class="year-check">
+        <h2 class="heding2-2">Перевір в який рік ти народився</h2>
+        <input type="text" id="year-input" placeholder="Введіть число" />
+        <button id="check-button"  class="lupa-button" >Перевірити</button>
+        <p id="result"></p>
+</section>
+
+
+<!-- вгадай число -->
+
+
+
+      <div class="black-line"></div>
+
+<div class="number-box">
+  <h2 class="number-heading">Вгадай число, яке загадав комп'ютер</h2>
+  <div class="number-input-box">
+    <input  placeholder="Число" class="number-input" min="1" max="100">
+    <button class="submit-button">Вгадай</button>
+    <p class="number-result"></p>
+  </div>
+</div>
+
+      <div class="black-line"></div>
+
+<!-- камінь ножиці папір -->
+
+<section class="section-game">
+  <div class="div-1">
+  <h2 class="heding-name">Камінь - ножиці - папір</h2>
+<ul class="ul-butons">
+  <li class="li-button"><button class="button-li" id="cut"><img src="./img/scissors1.png" alt=""></button></li>
+  <li class="li-button"><button class="button-li" id="stone"><img src="./img/sto1.webp" alt=""></button></li>
+  <li class="li-button"><button class="button-li" id="papar"><img src="./img/paper1.webp" alt=""></button></li>
+  <li class="li-button">
+    <p class="p-rahunok">Рахунок:</p>
+    <p class="p-computer">Комп'ютер <span class="span1">-</span></p>
+    <p class="p-You">Ви<span class="span2"></span>-</p>
+  </li>
+</ul>
+
+<p class="p-winer"></p>
+
+<button class="button-computer">Варіант комп’ютера</button>
+</div>
+</section>
+
+      </div>
+    </main>
+
+    <script type="module" src="./js.js"></script>
+  </body>
+</html>
