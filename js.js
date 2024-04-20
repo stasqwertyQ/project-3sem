@@ -55,29 +55,43 @@ const loginUserName = document.querySelector("#userNameHeader");
 // калькулятор
 
 
-// const inp = document.querySelector(".inp1");
-// const buttonPlus = document.querySelector(".button1");
-// const buttonMinus = document.querySelector(".button2");
-// const buttonMno = document.querySelector(".button3");
-// const buttonDil = document.querySelector(".button4");
-// const buttonDor = document.querySelector(".butonn4");
-// const inp2 = document.querySelector(".inp2");
-// const inp3 = document.querySelector(".inp3");
-// const form = document.querySelector(".form1");
+const inp = document.querySelector(".inp1");
+const buttonPlus = document.querySelector(".button1");
+const buttonMinus = document.querySelector(".button2");
+const buttonMno = document.querySelector(".button3");
+const buttonDil = document.querySelector(".button4");
+const buttonDor = document.querySelector(".butonn");
+const inp2 = document.querySelector(".inp2");
+const inp3 = document.querySelector(".inp3");
+const form = document.querySelector(".form1");
 
-// form.addEventListener("submit", submitCheck)
-// form.addEventListener("click", onclick )
+form.addEventListener("submit", submitCheck);
+form.addEventListener("click", onclick);
 
-// function submitCheck(ivent) {
-//   ivent.preventDefault()
-//   const valueinp1 = form.elements.inp11.value;
-//   const valueinp2 = form.elements.inp22.value;
-//   console.log(Number(valueinp1) + Number(valueinp2));
-// }
+function submitCheck(event) {
+  event.preventDefault();
+  const valueinp1 = parseFloat(form.elements.inp11.value);
+  const valueinp2 = parseFloat(form.elements.inp22.value);
+  let result;
+  if (event.submitter === buttonPlus) {
+    result = valueinp1 + valueinp2;
+  } else if (event.submitter === buttonMinus) {
+    result = valueinp1 - valueinp2;
+  } else if (event.submitter === buttonMno) {
+    result = valueinp1 * valueinp2;
+  } else if (event.submitter === buttonDil) {
+    result = valueinp1 / valueinp2;
+  }
+  inp3.value = result;
+}
 
-// function onclick(ivent) {
-//   console.log(ivent.target.nodeName === "BUTTON");
-// }
+function onclick(event) {
+  console.log(event.target.nodeName === "BUTTON");
+}
+
+
+
+
 
 
 
@@ -145,47 +159,114 @@ const stone = document.querySelector("#stone");
 const papar = document.querySelector("#papar");
 
 
+const computerOutput = document.querySelector(".p-computer span");
+
+
+const yourOutput = document.querySelector(".p-You span");
+
+
+const winerOutput = document.querySelector(".p-winer");
+
+
+const scoreText = document.querySelector(".p-rahunok");
+
+
+
+let computerScore = 0;
+let yourScore = 0;
+
 cut.addEventListener("click", function() {
-console.log("ножиці");
+    playGame("Ножиці");
 });
-
-
-console.log(cut);
-
 
 stone.addEventListener("click", function () {
-console.log("камінь");
+    playGame("Камінь");
 });
 
-
-
-console.log(stone);
-
-
-papar.addEventListener("click",function() {
-console.log("папір");
+papar.addEventListener("click", function() {
+    playGame("Папір");
 });
 
-console.log(papar);
+function playGame(userChoice) {
+    const options = ["Ножиці", "Камінь", "Папір"];
+    const computerChoice = options[Math.floor(Math.random() * options.length)];
+    
+    computerOutput.textContent = computerChoice;
+    yourOutput.textContent = userChoice;
 
 
-function computerrr() {
-  console.log(Math.random() * 3); 
-  Math.floor(Math.random() * 3);
-  return Math.floor(Math.random() * 3);
+    
+    if (userChoice === computerChoice) {
+        winerOutput.textContent = "Нічия!";
+    } else if (
+        (userChoice === "Ножиці" && computerChoice === "Папір") ||
+        (userChoice === "Камінь" && computerChoice === "Ножиці") ||
+        (userChoice === "Папір" && computerChoice === "Камінь")
+    ) {
+        winerOutput.textContent = "Ви виграли!";
+        yourScore++;
+    } else {
+        winerOutput.textContent = "Ви програли!";
+        computerScore++;
+    }
+
+}
+
+// калькулятор часу
+
+
+const time_calc_input = document.getElementById("time_calc_input_id")
+
+const time_calc_button = document.getElementById("time_calc_button_id")
+
+time_calc_button.addEventListener("click", timeCalcOnClic)
+
+const answear_input = document.getElementById("final_time")
+
+function timeCalcOnClic() {
+  const input_value = Number(time_calc_input.value)
+  const final_functional_result = getIntoHours(input_value)
+  answear_input.textContent = final_functional_result
 }
 
 
-console.log(computerrr());
+function getIntoHours(min) {
+  const result = Math.floor(min / 60)
+  const final_result = min - (60 * result)
+  return `${result}h and ${final_result}min`
 
 
 
 
+}
 
 
 
+// футбол
 
 
+const football_field = document.getElementById("football_field");
+const football = document.getElementById("football");
 
+football_field.addEventListener("click", moveBall);
 
+function moveBall(event) {
+  const field_rect = football_field.getBoundingClientRect();
+
+  const field_width = field_rect.width;
+  const field_height = field_rect.height;
+
+  const ball_radius = football.clientWidth / 2;
+
+  const field_offset_left = field_rect.left;
+  const field_offset_top = field_rect.top;
+
+  const mouse_x = event.clientX - field_offset_left;
+  const mouse_y = event.clientY - field_offset_top;
+
+  const new_x = Math.max(ball_radius, Math.min(mouse_x - ball_radius, field_width - ball_radius));
+  const new_y = Math.max(ball_radius, Math.min(mouse_y - ball_radius, field_height - ball_radius));
+
+  football.style.transform = `translate(${new_x}px, ${new_y}px)`;
+}
 

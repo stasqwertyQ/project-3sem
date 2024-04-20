@@ -81,30 +81,14 @@
         <div class="black-line"></div>
       </section>
 
-      <!-- калькулятор-->
 
-      <!-- <section>
-        <div>
-          <h2>калькулятор</h2>
-     <form class="form1">
-          <input name="inp11" class="inp1" type="text">
-          <button name="plus" class="button1">+</button>
-          <button name="Minus" class="button2">-</button>
-          <button name="Mno" class="butoon3">*</button>
-          <button name="dil" class="button4">/</button> 
-          <input name="inp22" class="inp2" type="text">
-      <button name="dor" class="butonn4" type ="submit">=</button>
-        <input name="result" class="inp3" type="text">
 
-     </form>
-        </div>
-      </section> -->
 
 <section>
       <div class="year-check">
         <h2 class="heding2-2">Перевір в який рік ти народився</h2>
         <input type="text" id="year-input" placeholder="Введіть число" />
-        <button id="check-button"  class="lupa-button" >Перевірити</button>
+        <button id="check-button"  class="lupa-button" >🔍︎</button>
         <p id="result"></p>
 </section>
 
@@ -119,7 +103,7 @@
   <h2 class="number-heading">Вгадай число, яке загадав комп'ютер</h2>
   <div class="number-input-box">
     <input  placeholder="Число" class="number-input" min="1" max="100">
-    <button class="submit-button">Вгадай</button>
+    <button class="submit-button">🔍︎</button>
     <p class="number-result"></p>
   </div>
 </div>
@@ -148,7 +132,58 @@
 </div>
 </section>
 
-      </div>
+      <div class="black-line"></div>
+
+<!-- КАЛЬКУЛЯТОР -->
+
+<section>
+
+  <div>
+    <h2 class="hedinggggg">Калькулятор</h2>
+    <form class="form1">
+      <input name="inp11" class="inp1" type="text">
+      <button name="plus" class="button1">+</button>
+      <button name="minus" class="button2">-</button>
+      <button name="mno" class="button3">*</button>
+      <button name="dil" class="button4">/</button> 
+      <input name="inp22" class="inp2" type="text">
+      <button name="dor" class="butonn" type="submit">=</button>
+      <input name="result" class="inp3" type="text">
+    </form>
+  </div>
+</section> 
+
+
+      <div class="black-line"></div>
+<!-- калькулятор часу -->
+
+
+<h3 class="heading1">Калькулятор часу</h3>
+            <div class="time_calc_flex" style="display: flex; justify-content: center; align-items: center;">
+                <div class="input-group flex_time_calc">
+                    <input type="number" placeholder="Введіть число" style="width: 115px;" class="input-field" id="time_calc_input_id">
+                <button id="time_calc_button_id" type="submit" class="button">🔍︎</button>
+                </div>
+                <p class="flex_time_calc">---------------------</p>
+                <p class="time_result flex_time_calc" id="final_time">*time*</p>
+            </div>
+
+
+
+      <div class="black-line"></div>
+
+
+      <!-- футбол -->
+
+<section>
+            <h3 class="heading1">Футбол</h3>
+            <div class="football_court" id="football_field">
+                <div class="ball" id="football">
+                </div>
+            </div>
+            </section>
+
+
     </main>
 
     <script type="module" src="./js.js"></script>
