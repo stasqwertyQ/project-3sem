@@ -473,6 +473,7 @@ const scientists = [
     } 
 ];
 
+
 const btn1 = document.getElementById("button1")
 btn1.addEventListener("click", nineteenth)
 
@@ -508,20 +509,6 @@ function byYears(){
   const render = renderHTML(res)
   div.insertAdjacentHTML('beforeend', render)}
 
-
-
-const btn8 = document.getElementById("button8")
-btn8.addEventListener("click", lessMore)
-
-function lessMore() {
-  let array = [];
-  const res = scientists.map((item) => item).sort((a, b) => (b.dead - b.born) - (a.dead - a.born))
-  array.push(res[res.length - 1], res[0])
-  const render = renderHTML(array)
-  div.insertAdjacentHTML('beforeend', render)
-}
-
-
 const btn4 = document.getElementById("btn4");
 btn4.addEventListener("click", lastbornPerson);
 
@@ -534,3 +521,63 @@ function lastbornPerson() {
   const render = renderHTML([sintens]);
     div.insertAdjacentHTML('beforeend', render)
 }
+
+const btn8 = document.getElementById("button8")
+btn8.addEventListener("click", lessMore)
+
+function lessMore() {
+  let array = [];
+  const res = scientists.map((item) => item).sort((a, b) => (b.dead - b.born) - (a.dead - a.born))
+  array.push(res[res.length - 1], res[0])
+  const render = renderHTML(array)
+  div.insertAdjacentHTML('beforeend', render)
+}
+
+const btn5 = document.getElementById("button5")
+btn5.addEventListener("click", findEnstain)
+
+function findEnstain() {
+  const Albert = scientists.find(Sciensits => Sciensits.surname == "Einstein")
+  const render = renderAlbert(Albert)
+  div.insertAdjacentHTML('beforeend', render)
+}
+
+function renderAlbert(object) {
+  div.innerHTML = '';
+return `<div class="sc_img"><p><p>${object.born}</p></div>`
+  
+}
+
+function findC() {
+  const cList = scientists.filter((item) => item.surname.startsWith("C"))
+  const render = renderHTML(cList)
+  div.insertAdjacentHTML('beforeend', render)
+}
+
+const btn6 = document.getElementById("button6")
+btn6.addEventListener("click", findC)
+
+function findC() {
+  const cList = scientists.filter((item) => item.surname.startsWith("C"))
+  const render = renderHTML(cList)
+  div.insertAdjacentHTML('beforeend', render)
+}
+
+const btn7 = document.getElementById("button7")
+btn7.addEventListener("click", delA)
+
+function delA() {
+  const delList = scientists.filter((item) => !item.name.startsWith("A"))
+  const render = renderHTML(delList)
+  div.insertAdjacentHTML('beforeend', render)
+}
+
+const btn9 = document.getElementById("button9")
+btn9.addEventListener("click", similarFirstLetter)
+
+function similarFirstLetter() {
+  const sim = scientists.filter((item) => item.name[0] === item.surname[0])
+  const render = renderHTML(sim)
+  div.insertAdjacentHTML('beforeend', render)
+}
+
