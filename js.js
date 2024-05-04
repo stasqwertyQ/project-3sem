@@ -1,9 +1,4 @@
-// const themeToggle = document.getElementById('theme-toggle');
 
-// themeToggle.addEventListener('click', () => {
-//   document.body.classList.toggle('light');
-//   document.body.classList.toggle('dark');
-// });
 
 let modal = document.getElementById("myModal");
   let modal2 = document.getElementById("modal2");
@@ -172,6 +167,7 @@ const scoreText = document.querySelector(".p-rahunok");
 
 
 
+
 let computerScore = 0;
 let yourScore = 0;
 
@@ -193,7 +189,7 @@ function playGame(userChoice) {
     
     computerOutput.textContent = computerChoice;
     yourOutput.textContent = userChoice;
-
+  scoreText.textContent = yourScore;
 
     
     if (userChoice === computerChoice) {
@@ -285,6 +281,7 @@ const cactus = document.getElementById("cactus");
 
 document.addEventListener("keydown", (e) => {
   if (e.code === "Space") {
+    e.preventDefault();
     jump();
   }
 });
@@ -299,7 +296,9 @@ const jump = () => {
 };
 
 console.log(parseInt(window.getComputedStyle(dino).getPropertyValue("top")));
-// console.log(dino.style.top);
+console.log(dino.style.top);
+
+
 
 // jump();
 
@@ -473,7 +472,6 @@ const scientists = [
     } 
 ];
 
-
 const btn1 = document.getElementById("button1")
 btn1.addEventListener("click", nineteenth)
 
@@ -533,6 +531,7 @@ function lessMore() {
   div.insertAdjacentHTML('beforeend', render)
 }
 
+
 const btn5 = document.getElementById("button5")
 btn5.addEventListener("click", findEnstain)
 
@@ -554,14 +553,8 @@ function findC() {
   div.insertAdjacentHTML('beforeend', render)
 }
 
-const btn6 = document.getElementById("button6")
-btn6.addEventListener("click", findC)
-
-function findC() {
-  const cList = scientists.filter((item) => item.surname.startsWith("C"))
-  const render = renderHTML(cList)
-  div.insertAdjacentHTML('beforeend', render)
-}
+const bthh6 = document.getElementById("bthh6")
+bthh6.addEventListener("click" , findC )
 
 const btn7 = document.getElementById("button7")
 btn7.addEventListener("click", delA)
@@ -572,6 +565,7 @@ function delA() {
   div.insertAdjacentHTML('beforeend', render)
 }
 
+
 const btn9 = document.getElementById("button9")
 btn9.addEventListener("click", similarFirstLetter)
 
@@ -580,4 +574,7 @@ function similarFirstLetter() {
   const render = renderHTML(sim)
   div.insertAdjacentHTML('beforeend', render)
 }
+
+
+// footer
 
